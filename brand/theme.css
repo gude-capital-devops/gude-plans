@@ -1,0 +1,305 @@
+/* gude.co live tokens
+   Active palette: Red Field (v3, recommended)
+   Source of truth for hex names: brand/palettes.html
+
+   These pages are a Crimson Field (dark red) layout.
+   Signal Red (#C23034) is for marks/CTAs on WHITE only — do not put it on Crimson Field.
+
+   Recolor the live site by editing this file. Do not hunt hex values in each HTML page.
+*/
+
+:root {
+  /* Named swatches from Red Field */
+  --garnet-black: #1C0D0F;
+  --crimson-field: #5A171B;
+  --port-red: #8C2226;
+  --signal-red: #C23034;
+  --white: #FFFFFF;
+  --iron-ash: #4A4546;
+  --field-muted: #D0C8C8;
+
+  /* Mapped into the landing-page variables already in use */
+  --bg: var(--crimson-field);
+  --bg-deep: var(--garnet-black);
+  --bg-band: var(--port-red);
+  --ink: var(--white);
+  --muted: var(--field-muted);
+  --logo-tone: #E4D6D6;
+  --accent: var(--white);
+  --accent-hover: var(--field-muted);
+  --hairline: rgba(255, 255, 255, 0.22);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --accent-glow: rgba(255, 255, 255, 0.22);
+  --btn-shadow: rgba(28, 13, 15, 0.28);
+  --accent-soft: rgba(255, 255, 255, 0.08);
+  --accent-border: rgba(255, 255, 255, 0.35);
+}
+
+/* Lockups inherit logo-tone when they use fill/stroke="currentColor" */
+.brands svg,
+.hero-mark svg {
+  color: var(--logo-tone);
+}
+
+/* Faint section dividers — off everywhere */
+.section-label .line,
+.lanes .label-row .line {
+  display: none;
+}
+
+/* Lane pages: Crimson Field by default. Add class="band-light" on a
+   section to break up red-on-red. Hub stays all Crimson Field.
+   Signal Red is for CTAs on white only. */
+body.lane {
+  background: var(--crimson-field);
+  color: var(--white);
+}
+
+body.lane .site-header {
+  background: var(--crimson-field);
+  color: var(--white);
+  border-bottom: none;
+}
+body.lane .wordmark,
+body.lane .nav-lanes,
+body.lane .nav-lanes a { color: var(--white); }
+body.lane .nav-lanes .here,
+body.lane .nav-lanes a:hover { color: var(--field-muted); }
+body.lane .nav-lanes .sep { color: rgba(255, 255, 255, 0.35); }
+
+body.lane .hero {
+  background: var(--port-red);
+  color: var(--white);
+  border: none;
+}
+body.lane .hero h1 { color: var(--white); }
+body.lane .hero .lede { color: var(--field-muted); }
+body.lane .hero .btn,
+body.lane .cta-band .btn,
+body.lane .cta-inline .btn {
+  background: var(--white);
+  color: var(--crimson-field);
+}
+body.lane .hero .btn:hover,
+body.lane .cta-band .btn:hover,
+body.lane .cta-inline .btn:hover {
+  background: var(--field-muted);
+  color: var(--crimson-field);
+}
+body.lane .hero .btn-outline,
+body.lane .cta-band .btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+body.lane .cta-band,
+body.lane .cta-inline,
+body.lane .site-footer {
+  background: var(--crimson-field);
+  color: var(--white);
+  border: none;
+}
+body.lane .cta-band h2 { color: var(--white); }
+body.lane .cta-band p,
+body.lane .cta-inline p,
+body.lane .contact-block { color: var(--field-muted); }
+body.lane .contact-block strong { color: var(--white); }
+body.lane .footer-links a { color: rgba(255, 255, 255, 0.62); }
+body.lane .footer-links a:hover { color: var(--white); }
+body.lane .legal { color: rgba(255, 255, 255, 0.34); }
+
+body.lane .exemplar-band { border: none; }
+
+/* White breaks — legal pages wrap the document in band-light too */
+body.lane .band-light {
+  background: var(--white);
+  color: var(--garnet-black);
+}
+body.lane .band-light a { color: var(--port-red); }
+body.lane .band-light a:hover { color: var(--signal-red); }
+
+body.lane .band-light .section-label h2 { color: var(--port-red); }
+body.lane .band-light .intro,
+body.lane .band-light .benefit p,
+body.lane .band-light .deliver p,
+body.lane .band-light .discipline,
+body.lane .band-light .tier p,
+body.lane .band-light .tier ul {
+  color: var(--iron-ash);
+}
+body.lane .band-light h2,
+body.lane .band-light h3,
+body.lane .band-light .benefit h3,
+body.lane .band-light .deliver h3,
+body.lane .band-light .tier h3 {
+  color: var(--garnet-black);
+}
+
+body.lane .band-light .benefit,
+body.lane .band-light .deliver,
+body.lane .band-light .tier,
+body.lane .band-light .intake-rows {
+  background: var(--white);
+  border: 1px solid #E4DCDC;
+}
+body.lane .band-light .tier-num { color: var(--port-red); }
+body.lane .band-light .intake-row { border-bottom: 1px solid #E4DCDC; }
+body.lane .band-light .intake-row:hover { background: #FAF7F7; }
+body.lane .band-light .intake-doc .label { color: var(--garnet-black); }
+body.lane .band-light .intake-doc .pdf-dl { color: var(--port-red); }
+body.lane .band-light .intake-doc .pdf-dl:hover { color: var(--signal-red); }
+body.lane .band-light .intake-meta input {
+  background: var(--white);
+  color: var(--garnet-black);
+  caret-color: var(--garnet-black);
+  border: 1px solid #D0C8C8;
+  -webkit-text-fill-color: var(--garnet-black);
+}
+body.lane .band-light .intake-meta input::placeholder {
+  color: #8A8484;
+  opacity: 1;
+  -webkit-text-fill-color: #8A8484;
+}
+body.lane .band-light .intake-meta input:focus {
+  border-color: var(--port-red);
+  box-shadow: 0 0 0 3px rgba(140, 34, 38, 0.12);
+}
+body.lane .band-light .intake-confirm {
+  border-color: #E4DCDC;
+  background: #FAF7F7;
+  color: var(--iron-ash);
+}
+body.lane .band-light .staff-note {
+  border-left-color: var(--port-red);
+  background: #FAF7F7;
+  color: var(--iron-ash);
+}
+
+body.lane .band-light .stat-strip,
+body.lane .band-light .flow {
+  gap: 16px;
+  background: transparent;
+  border: none;
+}
+body.lane .band-light .stat,
+body.lane .band-light .flow-step {
+  background: var(--crimson-field);
+  color: var(--white);
+  border-radius: 8px;
+}
+body.lane .band-light .stat .num,
+body.lane .band-light .flow-step h3 { color: var(--white); }
+body.lane .band-light .stat .lbl,
+body.lane .band-light .stat .src,
+body.lane .band-light .flow-step p,
+body.lane .band-light .flow-step .step-num { color: var(--field-muted); }
+
+body.lane .band-light .btn:not(.btn-outline) {
+  background: var(--signal-red);
+  color: var(--white);
+}
+body.lane .band-light .btn:not(.btn-outline):hover {
+  background: var(--port-red);
+  color: var(--white);
+}
+
+body.lane .legal-doc {
+  max-width: 720px;
+  padding: 56px 0 72px;
+}
+body.lane .legal-doc h1 {
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  color: var(--garnet-black);
+}
+body.lane .legal-doc .updated {
+  font-size: 13px;
+  color: var(--iron-ash);
+  margin-bottom: 28px;
+}
+body.lane .legal-doc h2 {
+  font-size: 16px;
+  margin: 32px 0 10px;
+  color: var(--garnet-black);
+}
+body.lane .legal-doc h3 {
+  font-size: 14px;
+  margin: 20px 0 8px;
+  color: var(--garnet-black);
+}
+body.lane .legal-doc p,
+body.lane .legal-doc li {
+  font-size: 15px;
+  color: var(--iron-ash);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+body.lane .legal-doc ul,
+body.lane .legal-doc ol { padding-left: 22px; margin-bottom: 12px; }
+body.lane .legal-doc li { margin-bottom: 8px; }
+
+/* Shared footer — logo left, legal right. Same on hub, lanes, and policy pages. */
+.site-footer {
+  padding: 32px 0 28px;
+  background: var(--crimson-field);
+  color: var(--white);
+}
+.footer-bar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 40px;
+  flex-wrap: wrap;
+}
+.site-footer .footer-mark { text-decoration: none; color: var(--white); }
+.site-footer .footer-mark .gude {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  display: block;
+}
+.site-footer .footer-mark .rule {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--white);
+  margin-top: 8px;
+}
+.footer-end { text-align: right; margin-left: auto; }
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  padding: 0 10px;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-links .sep { color: rgba(255, 255, 255, 0.28); }
+.legal {
+  margin-top: 8px;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.34);
+  line-height: 1.5;
+}
+@media (max-width: 520px) {
+  .footer-bar {
+    padding: 0 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-end { text-align: left; margin-left: 0; }
+  .footer-links { justify-content: flex-start; }
+}
